@@ -1,4 +1,3 @@
-
 name: Build and deploy .NET app to Azure Web App
 
 on:
@@ -17,7 +16,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '8.0.x'   # ✅ Ensure .NET 8 is installed
 
       - name: Restore dependencies
         run: dotnet restore
@@ -36,4 +35,3 @@ jobs:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
           package: ./publish
 
-    
